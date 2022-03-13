@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+#container{
+	padding-bottom:50px;
+}
+.status {
+	margin-bottom: 50px;
+}
+
+.pStatus{
+	border: 5px solid black;
+	float: left;
+	width: 49%;
+}
+
+.eStatus{
+	border: 5px solid black;
+	float: right;
+	width: 49%;
+}
+
+.statusLi li{
+	display:inline;
+}
+
+.questuion{
+	padding-top: 50px;
+	margin-top: 50px;
+
+}
