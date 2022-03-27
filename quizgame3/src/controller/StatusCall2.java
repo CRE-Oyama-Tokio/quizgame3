@@ -8,19 +8,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class GameControl
+ * Servlet implementation class StatusCall2
  */
-@WebServlet("/GameControl")
-public class GameControl extends HttpServlet {
+@WebServlet("/StatusCall2")
+public class StatusCall2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GameControl() {
+    public StatusCall2() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,22 +38,14 @@ public class GameControl extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		HttpSession session = request.getSession();
-		int playerHP = (Integer)session.getAttribute("playerHP");
-		int playerAP = (Integer)session.getAttribute("playerAP");
-		int enemyHP = (Integer)session.getAttribute("enemyHP");
-		int enemyAP = (Integer)session.getAttribute("enemyAP");
-		int ansNum = (Integer)session.getAttribute("ansNum");
-		//int choice = (Integer)request.getParameter("1");
-		if (choice == ansNum) {
-			enemyHP -= playerAP;
-			session.setAttribute("enemyHP", enemyHP);
-		} else {
-			playerHP -= enemyAP;
-			session.setAttribute("playerHP", playerHP);
-		}
+		
 
-		RequestDispatcher rd = request.getRequestDispatcher("BattleScreen2.jsp");
+		try {
+            Thread.sleep(3 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+		RequestDispatcher rd = request.getRequestDispatcher("BattleScreen.jsp");
 		rd.forward(request, response);
 	}
 

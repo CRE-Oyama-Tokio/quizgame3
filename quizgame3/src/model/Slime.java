@@ -10,6 +10,7 @@ public class Slime extends Enemy {
 		setEnemyName("スライム");
 		setHP(20);
 		setAP(10);
+		setRound(1);
 	}
 
 	public String[] getAns1() {

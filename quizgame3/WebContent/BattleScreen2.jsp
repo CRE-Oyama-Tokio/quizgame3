@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>戦闘画面</title>
-<link rel="stylesheet" type="text/css" href="Quizgame.css">
+<title>Insert title here</title>
 </head>
 <body>
 	<div id="container">
@@ -22,30 +21,13 @@
 				<%String enemyName = (String)session.getAttribute("enemyName");%>
 				<%int enemyHP = (Integer)session.getAttribute("enemyHP"); %>
 				<%int enemyAP = (Integer)session.getAttribute("enemyAP"); %>
-				<%int round = (Integer)session.getAttribute("round"); %>
 				<%=enemyName %>
 				<%=enemyHP %>
 				<%=enemyAP %>
-				<%=round %>
 			</div>
 		</div>
-		<div class="questions">
-			<%String question = (String)session.getAttribute("question"); %>
-			<%=question %>
-		</div>
-		<div class="choices">
-			<%String[] ans = (String[])session.getAttribute("ans");%>
-			<%=ans[0] %>
-			<%=ans[1] %>
-			<%=ans[2] %>
-		</div>
 	</div>
-
-	<form action="GameControl" method="POST">
-		<input type="submit" name="1" value=1>
-		<input type="submit" name="2" value=2>
-		<input type="submit" name="3" value=3>
-	</form>
-
+	<%RequestDispatcher rd = request.getRequestDispatcher("StatusCall2.java"); %>
+	<%rd.forward(request, response);%>
 </body>
 </html>

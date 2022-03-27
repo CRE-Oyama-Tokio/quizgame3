@@ -11,8 +11,8 @@
 	<form action="StatusCall" method="POST">
 		<input type="submit" value="ゲーム開始"><br>
 		<a href="NameInput.jsp">名前を変更する</a>
-		<%String playerName = (String)session.getAttribute("playerName"); %>
-		<%session.setAttribute("playerName",playerName); %>
+		<%//String playerName = (String)session.getAttribute("playerName"); %>
+		<%//session.setAttribute("playerName",playerName); %>
 	</form>
 </body>
 </html>

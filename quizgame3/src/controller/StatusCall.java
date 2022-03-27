@@ -57,15 +57,19 @@ public class StatusCall extends HttpServlet {
 		int enemyAP = slime.getAP();  //スライムの攻撃力を取得
 		String question = slime.quiz(cnt);//クイズを取得
 		String[] ans = slime.getAns1();  //クイズの答えを取得
+		int ansNum = slime.getAnsNum();
+		int round = slime.getRound();  //ラウンドを取得
 
-		session.setAttribute("playerName",playerName);
+		session.setAttribute("playerName",playerName);   //プレイヤーの名前を格納
 		session.setAttribute("playerHP",playerHP);  //プレイヤーのHPを格納
 		session.setAttribute("playerAP", playerAP);  //プレイヤーの攻撃力を格納
 		session.setAttribute("enemyName", enemyName);  //敵の名前を格納
 		session.setAttribute("enemyHP", enemyHP );  //敵のHPを格納
 		session.setAttribute("enemyAP", enemyAP);  //敵の攻撃力を格納
 		session.setAttribute("question", question);  //問題を格納
-		session.setAttribute("ans", ans);	//答えを格納
+		session.setAttribute("ans", ans);	//選択肢格納
+		session.setAttribute("ansNum", ansNum); //答えの番号を格納
+		session.setAttribute("round", round);   //ラウンドを格納
 
 		RequestDispatcher rd = request.getRequestDispatcher("BattleScreen.jsp");
 		rd.forward(request, response);
