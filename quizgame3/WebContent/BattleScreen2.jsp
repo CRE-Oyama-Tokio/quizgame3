@@ -4,26 +4,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ダメージ画面</title>
+<%@ page import = "model.Player"%>
+<%@ page import = "model.Slime" %>
 </head>
 <body>
 	<div id="container">
 		<div class="status">
 			<div class="pStatus">
 				<%String playerName = (String)session.getAttribute("playerName"); %>
-				<%int playerHP = (Integer)session.getAttribute("playerHP");%>
-				<%int playerAP = (Integer)session.getAttribute("playerAP");%>
+				<%Player player = (Player)session.getAttribute("player"); %>
+				<%int playerHP = player.getHP();%>
+				<%int playerAP = player.getAP();%>
 				<%=playerName %>
 				<%=playerHP %>
 				<%=playerAP %>
 			</div>
 			<div class="eStatus">
-				<%String enemyName = (String)session.getAttribute("enemyName");%>
-				<%int enemyHP = (Integer)session.getAttribute("enemyHP"); %>
-				<%int enemyAP = (Integer)session.getAttribute("enemyAP"); %>
+				<%Slime slime = (Slime)session.getAttribute("slime"); %>
+				<%String enemyName = slime.getEnemyName(); %>
+				<%int enemyHP = slime.getHP(); %>
+				<%int enemyAP = slime.getAP(); %>
+				<%int round = slime.getRound(); %>
+				<%int cnt = slime.getCnt(); %>
 				<%=enemyName %>
 				<%=enemyHP %>
 				<%=enemyAP %>
+				<%=round %>
 			</div>
 		</div>
 	</div>

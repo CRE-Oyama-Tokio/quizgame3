@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Player;
+import model.Slime;
+
 /**
  * Servlet implementation class GameControl
  */
@@ -40,18 +43,21 @@ public class GameControl extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		HttpSession session = request.getSession();
-		int playerHP = (Integer)session.getAttribute("playerHP");
-		int playerAP = (Integer)session.getAttribute("playerAP");
-		int enemyHP = (Integer)session.getAttribute("enemyHP");
-		int enemyAP = (Integer)session.getAttribute("enemyAP");
-		int ansNum = (Integer)session.getAttribute("ansNum");
-		//int choice = (Integer)request.getParameter("1");
+		Player player = (Player)session.getAttribute("player");
+		Slime slime = (Slime)session.getAttribute("slime");
+		int playerHP = player.getHP();
+		int playerAP = player.getAP();
+		int enemyHP = slime.getHP();
+		int enemyAP = slime.getAP();
+		String ansNum = slime.getAnsNum();
+
+		String choice = (String)request.getParameter("choice");  //答えが合っているか間違っているか確認
 		if (choice == ansNum) {
 			enemyHP -= playerAP;
-			session.setAttribute("enemyHP", enemyHP);
+			slime.setHP(enemyHP);
 		} else {
 			playerHP -= enemyAP;
-			session.setAttribute("playerHP", playerHP);
+			player.setHP(playerHP);
 		}
 
 		RequestDispatcher rd = request.getRequestDispatcher("BattleScreen2.jsp");

@@ -6,23 +6,28 @@
 <meta charset="UTF-8">
 <title>戦闘画面</title>
 <link rel="stylesheet" type="text/css" href="Quizgame.css">
+<%@ page import = "model.Player"%>
+<%@ page import = "model.Slime" %>
 </head>
 <body>
 	<div id="container">
 		<div class="status">
 			<div class="pStatus">
 				<%String playerName = (String)session.getAttribute("playerName"); %>
-				<%int playerHP = (Integer)session.getAttribute("playerHP");%>
-				<%int playerAP = (Integer)session.getAttribute("playerAP");%>
+				<%Player player = (Player)session.getAttribute("player"); %>
+				<%int playerHP = player.getHP();%>
+				<%int playerAP = player.getAP();%>
 				<%=playerName %>
 				<%=playerHP %>
 				<%=playerAP %>
 			</div>
 			<div class="eStatus">
-				<%String enemyName = (String)session.getAttribute("enemyName");%>
-				<%int enemyHP = (Integer)session.getAttribute("enemyHP"); %>
-				<%int enemyAP = (Integer)session.getAttribute("enemyAP"); %>
-				<%int round = (Integer)session.getAttribute("round"); %>
+				<%Slime slime = (Slime)session.getAttribute("slime"); %>
+				<%String enemyName = slime.getEnemyName(); %>
+				<%int enemyHP = slime.getHP(); %>
+				<%int enemyAP = slime.getAP(); %>
+				<%int round = slime.getRound(); %>
+				<%int cnt = slime.getCnt(); %>
 				<%=enemyName %>
 				<%=enemyHP %>
 				<%=enemyAP %>
@@ -30,11 +35,11 @@
 			</div>
 		</div>
 		<div class="questions">
-			<%String question = (String)session.getAttribute("question"); %>
+			<%String question = slime.quiz(cnt); %>
 			<%=question %>
 		</div>
 		<div class="choices">
-			<%String[] ans = (String[])session.getAttribute("ans");%>
+			<%String[] ans = slime.getAns(cnt);%>
 			<%=ans[0] %>
 			<%=ans[1] %>
 			<%=ans[2] %>
@@ -42,9 +47,9 @@
 	</div>
 
 	<form action="GameControl" method="POST">
-		<input type="submit" name="1" value=1>
-		<input type="submit" name="2" value=2>
-		<input type="submit" name="3" value=3>
+		<button type="submit" name="choice" value="1">1</button>
+		<button type="submit" name="choice" value="2">2</button>
+		<button type="submit" name="choice" value="3">3</button>
 	</form>
 
 </body>

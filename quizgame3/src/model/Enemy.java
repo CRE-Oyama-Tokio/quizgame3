@@ -3,15 +3,24 @@ package model;
 public abstract class Enemy extends CharaStatus{
 
 
-	private String enemyName;
-	private int ansNum;
+	private String enemyName = null;
+	private String ansNum = null;
 	private int round;
+	private int cnt = 1;
 
-	public int getAnsNum() {
+	public int getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+
+	public String getAnsNum() {
 		return ansNum;
 	}
 
-	public void setAnsNum(int ansNum) {
+	public void setAnsNum(String ansNum) {
 		this.ansNum = ansNum;
 	}
 

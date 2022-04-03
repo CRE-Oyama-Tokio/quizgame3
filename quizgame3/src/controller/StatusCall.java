@@ -47,29 +47,11 @@ public class StatusCall extends HttpServlet {
 		String playerName = (String)session.getAttribute("playerName");
 
 		Player player = new Player();  //playerをインスタンス化
-		int playerHP = player.getHP();  //プレイヤーのHPを取得
-		int playerAP = player.getAP();  //プレイヤーの攻撃力を取得
-
-		int cnt = 1;
 		Slime slime = new Slime();  //スライムをインスタンス化
-		String enemyName = slime.getEnemyName();  //スライムの名前を取得
-		int enemyHP = slime.getHP();  //スライムのHPを取得
-		int enemyAP = slime.getAP();  //スライムの攻撃力を取得
-		String question = slime.quiz(cnt);//クイズを取得
-		String[] ans = slime.getAns1();  //クイズの答えを取得
-		int ansNum = slime.getAnsNum();
-		int round = slime.getRound();  //ラウンドを取得
 
+		session.setAttribute("player", player);  //Playerクラスのインスタンスを格納
+		session.setAttribute("slime", slime);  //slimeクラスのインスタンスを格納
 		session.setAttribute("playerName",playerName);   //プレイヤーの名前を格納
-		session.setAttribute("playerHP",playerHP);  //プレイヤーのHPを格納
-		session.setAttribute("playerAP", playerAP);  //プレイヤーの攻撃力を格納
-		session.setAttribute("enemyName", enemyName);  //敵の名前を格納
-		session.setAttribute("enemyHP", enemyHP );  //敵のHPを格納
-		session.setAttribute("enemyAP", enemyAP);  //敵の攻撃力を格納
-		session.setAttribute("question", question);  //問題を格納
-		session.setAttribute("ans", ans);	//選択肢格納
-		session.setAttribute("ansNum", ansNum); //答えの番号を格納
-		session.setAttribute("round", round);   //ラウンドを格納
 
 		RequestDispatcher rd = request.getRequestDispatcher("BattleScreen.jsp");
 		rd.forward(request, response);

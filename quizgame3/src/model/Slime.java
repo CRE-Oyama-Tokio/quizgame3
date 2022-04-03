@@ -6,6 +6,7 @@ public class Slime extends Enemy {
 	private String[] ans2 = { "1.流川楓", "2.安西光義", "3.桜木花道" };
 	private String[] ans3 = { "1.我妻善逸", "2.竈門炭治郎", "3.嘴平伊之助" };
 
+
 	public Slime() {
 		setEnemyName("スライム");
 		setHP(20);
@@ -13,8 +14,17 @@ public class Slime extends Enemy {
 		setRound(1);
 	}
 
-	public String[] getAns1() {
-		return ans1;
+	public String[] getAns(int cnt) {
+
+		String[] ans = null;
+		if(cnt == 1) {
+			ans = ans1;
+		} else if(cnt == 2) {
+			ans = ans2;
+		} else if(cnt == 3) {
+			ans = ans3;
+		}
+		return ans;
 	}
 
 	public void setAns1(String[] ans1) {
@@ -40,13 +50,13 @@ public class Slime extends Enemy {
 	public String quiz(int cnt) {
 		String question = null;
 		if(cnt == 1) {
-			setAnsNum(1);
+			setAnsNum("1");
 			question = "ドラゴンボールの主人公は？";
 		} else if(cnt == 2) {
-			setAnsNum(3);
+			setAnsNum("3");
 			question = "スラムダンクの主人公は？";
 		} else if(cnt == 3) {
-			setAnsNum(2);
+			setAnsNum("2");
 			question = "鬼滅の刃の主人公は？";
 		}
 		return question;
