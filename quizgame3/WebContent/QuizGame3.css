@@ -1,0 +1,212 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+body{
+	background-color: black;
+	height:100vh;
+	width:100%;
+	margin: 0 auto;
+}
+
+#container{
+	height:100vh;
+	width:100%;
+}
+
+.slime{
+	background-image: url(2030249i.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+}
+
+.killerPanther{
+	background-image: url(2030348i.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+}
+
+.golem{
+	background-image: url(2030350i.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+}
+
+.boss{
+	background-image: url(2030351i.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
+}
+
+.nameinput{
+	height:100vh;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titlescreen{
+	height:100vh;
+	position: relative;
+}
+
+.title{
+	height:50%;
+	text-align: center;
+	justify-content: center;
+    align-items: center;
+    text-align: center;
+	color: white;
+	font-size: 50px;
+	font-family: 'Amatic SC', cursive;
+}
+
+h1{
+	line-height:200px;
+}
+
+.start{
+	justify-content: center;
+	align-items: center;
+    text-align: center;
+}
+
+.button{
+	width: 300px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.status{
+	height:30px;
+	padding-top: 30px;
+}
+
+.pStatus{
+	border: 3px solid white;
+	border-width: 3px;
+	float: left;
+	width: 40%;
+	margin-left:100px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.eStatus{
+	border: 3px solid white;
+	border-width: 3px;
+	float: right;
+	width: 40%;
+	margin-right:100px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.quizset{
+	height:100px;
+	width:100%;
+}
+
+.quiz{
+	border: 3px solid white;
+	border-width: 3px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+	height: 100px;
+	width: 40%;
+	padding: 10px;
+	margin-left: 100px;
+	float: left;
+}
+
+.choiceset{
+	float: right;
+	height: 100px;
+	width: 25%;
+	border: 3px solid white;
+	border-width: 3px;
+	background-color: rgba(0,0,0,0.5);
+	padding: 10px;
+	margin-right: 200px;
+}
+
+.choice{
+	padding-top: 20px;
+	text-align: center;
+
+}
+
+button{
+	font-size:20px;
+	padding: 20px;
+}
+
+.statusLi li{
+	display: inline;
+}
+
+.img {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	height: 400px;
+	text-align: center;
+	width: 100%;
+
+}
+
+.damagemassage{
+	height: 100px;
+	margin-left:30%;
+	margin-right:30%;
+	border: 3px solid white;
+	border-width: 3px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.levelupmassage{
+	height: 150px;
+	margin-left:30%;
+	margin-right:30%;
+	border: 3px solid white;
+	border-width: 3px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.next{
+	padding-top:30px;
+}
+
+.win{
+	height: 150px;
+	margin-left:30%;
+	margin-right:30%;
+	border: 3px solid white;
+	border-width: 3px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.dead{
+	height: 150px;
+	margin-left:30%;
+	margin-right:30%;
+	border: 3px solid white;
+	border-width: 3px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+}
